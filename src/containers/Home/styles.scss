@@ -1,0 +1,65 @@
+.home {
+  min-height: 100vh;
+
+  h1 {
+    color: #776e65;
+    font-size: 5rem;
+    font-weight: 700;
+    padding-right: 10rem;
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+
+    > div {
+      display: flex;
+    }
+
+    .score-card {
+      background: #BBADA0;
+      padding: 5px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 4px;
+      height: 60px;
+
+      & + .score-card {
+        margin-left: 10px;
+      }
+
+      * {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      *:first-child {
+        color: #EEE4DA;
+      }
+
+      *:last-child {
+        color: white;
+      }
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+
+      & > div {
+        color: #776e65;
+        font-weight: 500;
+      }
+
+      button {
+        background: #8F7A66;
+        outline: none;
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+}
