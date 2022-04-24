@@ -21,12 +21,17 @@ module.exports = {
     'no-use-before-define': 'off',
     '@typescript-eslint/no-use-before-define': ['error'],
     '@typescript-eslint/no-unused-vars': 'off',
+    'no-unused-vars': 'off',
     'no-redeclare': 'off',
-    '@typescript-eslint/no-redeclare': ['error']
+    '@typescript-eslint/no-redeclare': ['error'],
+    'import/no-unresolved': 'off',
+    'simple-import-sort/imports': 1,
+    'simple-import-sort/exports': 1,
+    'sort-imports': 'off'
   },
   plugins: [
     'react',
-    'import',
+    'simple-import-sort',
     'jsx-a11y',
     'react-hooks',
     '@typescript-eslint',
@@ -41,7 +46,8 @@ module.exports = {
   },
   env: {
     es6: true,
-    browser: true
+    browser: true,
+    jest: true
   },
   settings: {
     react: {

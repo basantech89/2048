@@ -1,0 +1,64 @@
+@use 'sass:math';
+
+.tile {
+  background: #cdc1b4;
+  margin: 7.5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  aspect-ratio: 1;
+
+  span {
+    font-size: 3.8em;
+    font-weight: 600;
+    color: white;
+  }
+}
+
+.base-board .tile {
+  width: 117.5px;
+}
+
+.tile-board .tile {
+  position: absolute;
+  width: 106.25px;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+$class_num: 2;
+
+@while $class_num <= 2048 {
+  $amount: $class_num % 50;
+  $color_amount: $class_num % 10;
+
+  $background: darken(#eee4da, $amount);
+  $color: darken(#776e65, $color_amount);
+
+  @if $class_num % 8 == 0 {
+    $background: darken(#f3b27a, $amount);
+    $color: darken(#f9f6f2, $color_amount);
+  } @else if $class_num % 4 == 0 {
+    $background: darken(#eee1c9, $amount);
+    $color: darken(#776e65, $color_amount);
+  }
+
+  .tile-#{$class_num} {
+    background: $background;
+    span {
+      color: $color;
+    }
+  }
+
+  $class_num: $class_num * 2;
+}
